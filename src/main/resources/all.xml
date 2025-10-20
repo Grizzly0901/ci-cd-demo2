@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite1" parallel="tests" thread-count="2">
+    <test name="PageTest">
+        <classes>
+            <class name="PageTest.CheckoutPageTest"/>
+            <class name="PageTest.HomePageTest"/>
+            <class name="PageTest.LoginTest"/>
+        </classes>
+    </test>
+</suite>
+
+        <!--        parallel : chay song song-->
+        <!-- allure generate &#45;&#45;single -file : xuất thành file -->
+        <!--        thread-count="": số luồng chạy song song -->
