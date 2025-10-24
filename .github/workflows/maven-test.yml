@@ -33,3 +33,9 @@ jobs:
 
       - name: Run Tests
         run: mvn test
+
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v3
+        with:
+            name: allure-report
+            path: target/site/allure-maven-plugin
