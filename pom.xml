@@ -19,6 +19,8 @@
     </properties>
 
 
+
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -74,7 +76,6 @@
         </dependency>
 
 
-
     </dependencies>
 
     <build>
@@ -91,10 +92,9 @@
                         <webdriver.chrome.driver>chromedriver</webdriver.chrome.driver>
                     </systemPropertyVariables>
                 </configuration>
-                <dependencies>
-
-                </dependencies>
             </plugin>
+
+
         </plugins>
 
     </build>
