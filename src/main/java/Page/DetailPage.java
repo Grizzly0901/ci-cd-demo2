@@ -10,10 +10,10 @@ public class DetailPage {
 
 
     public void clickAddTocart() {
-        WebD.WEB_DRIVER.findElement(AddToCartLocator).click();
+        WebD.getWebDriver().findElement(AddToCartLocator).click();
     }
 
     public void clickRemove() {
-        WebD.WEB_DRIVER.findElement(removeButton).click();
+        WebD.getWebDriver().findElement(removeButton).click();
     }
 }

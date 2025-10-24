@@ -36,14 +36,14 @@ public class HomePage {
 
     @Step ("Open sidebar")
     public void openSidebar() {
-        WebD.WEB_DRIVER.findElement(menuButton).click();
+        WebD.getWebDriver().findElement(menuButton).click();
         // Đợi cho sidebar hiển thị hoàn toàn
-        WebD.WEB_DRIVER_WAIT.until(ExpectedConditions.visibilityOfElementLocated(menuWrap));
+        WebD.getWebDriverWait().until(ExpectedConditions.visibilityOfElementLocated(menuWrap));
         // Đợi luôn cho nút logout có thể click được (rất quan trọng)
-        WebD.WEB_DRIVER_WAIT.until(ExpectedConditions.elementToBeClickable(logoutButton));}
+        WebD.getWebDriverWait().until(ExpectedConditions.elementToBeClickable(logoutButton));}
     @Step ("Logout")
     public void clickLogoutMenu() {
-        WebD.WEB_DRIVER.findElement(logoutButton).click();
+        WebD.getWebDriver().findElement(logoutButton).click();
     }
 
     public void Logout() {
@@ -54,7 +54,7 @@ public class HomePage {
 
     // click random theo số tự nhập
     public void randomProduct(int numOfProducts) {
-        List<WebElement> products = WebD.WEB_DRIVER.findElements(ProductLocator);
+        List<WebElement> products = WebD.getWebDriver().findElements(ProductLocator);
         int total = products.size();
 
         // Sinh danh sách index ngẫu nhiên, không trùng
@@ -72,7 +72,7 @@ public class HomePage {
 
     // chọn và click vào trang chi tiết 1 sp
     public void openRandomProductDetail() {
-        List<WebElement> products = WebD.WEB_DRIVER.findElements(productContainerLocator);
+        List<WebElement> products = WebD.getWebDriver().findElements(productContainerLocator);
         int randomIndex = new Random().nextInt(products.size());
         WebElement randomProduct = products.get(randomIndex);
 
@@ -85,23 +85,23 @@ public class HomePage {
 
     // click nút giỏ hàng
     public void clickAddToCartButton() {
-        WebD.WEB_DRIVER.findElement(AddToCartButton).click();
+        WebD.getWebDriver().findElement(AddToCartButton).click();
     }
 
     // Chỉ click random 1 sp
     public void clickRandomAddToCart() {
-        List<WebElement> AddButton = WebD.WEB_DRIVER.findElements(RandomAddToCart);
+        List<WebElement> AddButton = WebD.getWebDriver().findElements(RandomAddToCart);
         int index = (int) (Math.random() * AddButton.size());
         WebElement RandomClick = AddButton.get(index);
         RandomClick.click();
     }
 
     public void clickCartButton() {
-        WebD.WEB_DRIVER.findElement(cartButton).click();
+        WebD.getWebDriver().findElement(cartButton).click();
     }
 
     public void checkNumberOfProduct() {
-        String Num = WebD.WEB_DRIVER.findElement(numberOfProduct).getText();
+        String Num = WebD.getWebDriver().findElement(numberOfProduct).getText();
         productCount = Integer.parseInt(String.valueOf(Num));
         if (productCount >= 1) {
             System.out.println("Added successfully");
@@ -113,15 +113,15 @@ public class HomePage {
 
 
     public void clickCheckout() {
-        WebD.WEB_DRIVER.findElement(checkoutButton).click();
+        WebD.getWebDriver().findElement(checkoutButton).click();
     }
 
     public void clickContinue() {
-        WebD.WEB_DRIVER.findElement(continueButton).click();
+        WebD.getWebDriver().findElement(continueButton).click();
     }
 
     public int getCartBadgeCount() {
-        List<WebElement> badges = WebD.WEB_DRIVER.findElements(cartBadge);
+        List<WebElement> badges = WebD.getWebDriver().findElements(cartBadge);
         if (badges.isEmpty()) {
             return 0; // không có badge = giỏ hàng rỗng
         }

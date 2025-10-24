@@ -18,34 +18,34 @@ public class CheckoutPage {
     private final By continueButton = By.cssSelector("input[id='continue']");
 
     public void clickCartButton() {
-        WebD.WEB_DRIVER.findElement(cartButton).click();
+        WebD.getWebDriver().findElement(cartButton).click();
     }
 
     public void clickCheckout() {
-        WebD.WEB_DRIVER.findElement(checkoutButton).click();
+        WebD.getWebDriver().findElement(checkoutButton).click();
     }
 
 
     public String getErrorText() {
-        WebDriverWait wait = new WebDriverWait(WebD.WEB_DRIVER, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(WebD.getWebDriver(), Duration.ofSeconds(5));
         WebElement errorMess = wait.until(ExpectedConditions.visibilityOfElementLocated(ErrorTextLocator));
-         return WebD.WEB_DRIVER.findElement(ErrorTextLocator).getText();
+         return WebD.getWebDriver().findElement(ErrorTextLocator).getText();
 
     }
 
     public void fillCheckoutForm(String firstname, String lastname, String postcode) {
-        WebD.WEB_DRIVER.findElement(By.id("first-name")).sendKeys(firstname);
-        WebD.WEB_DRIVER.findElement(By.id("last-name")).sendKeys(lastname);
-        WebD.WEB_DRIVER.findElement(By.id("postal-code")).sendKeys(postcode);
+        WebD.getWebDriver().findElement(By.id("first-name")).sendKeys(firstname);
+        WebD.getWebDriver().findElement(By.id("last-name")).sendKeys(lastname);
+        WebD.getWebDriver().findElement(By.id("postal-code")).sendKeys(postcode);
 
     }
 
 
 
     public void clearForm() {
-        WebElement firstName = WebD.WEB_DRIVER.findElement(By.id("first-name"));
-        WebElement lastName = WebD.WEB_DRIVER.findElement(By.id("last-name"));
-        WebElement postalCode = WebD.WEB_DRIVER.findElement(By.id("postal-code"));
+        WebElement firstName = WebD.getWebDriver().findElement(By.id("first-name"));
+        WebElement lastName = WebD.getWebDriver().findElement(By.id("last-name"));
+        WebElement postalCode = WebD.getWebDriver().findElement(By.id("postal-code"));
 
         firstName.clear();
         lastName.clear();
@@ -55,7 +55,7 @@ public class CheckoutPage {
 
 
     public void clickContinue() {
-        WebD.WEB_DRIVER.findElement(continueButton).click();
+        WebD.getWebDriver().findElement(continueButton).click();
     }
 
 

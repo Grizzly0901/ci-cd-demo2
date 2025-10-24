@@ -5,9 +5,6 @@ import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
-import javax.swing.*;
-import java.nio.charset.StandardCharsets;
-import java.sql.Driver;
 
 public class LoginPage {
 
@@ -19,30 +16,30 @@ public class LoginPage {
     @Step ("Login with valid value")
     public void login(String username, String password) {
         Allure.step("Enter username: " + username);
-        WebD.WEB_DRIVER.findElement(usernameLocator).sendKeys(username);
+        WebD.getWebDriver().findElement(usernameLocator).sendKeys(username);
         Allure.step("Enter password: " + password);
-        WebD.WEB_DRIVER.findElement(passwordLocator).sendKeys(password);
+        WebD.getWebDriver().findElement(passwordLocator).sendKeys(password);
         Allure.step("Click button");
-        WebD.WEB_DRIVER.findElement(loginButtonLocator).click();
+        WebD.getWebDriver().findElement(loginButtonLocator).click();
     }
 
 
 
 
     public String getErrorMessage() {
-        return WebD.WEB_DRIVER.findElement(errorMessageLocator).getText();
+        return WebD.getWebDriver().findElement(errorMessageLocator).getText();
     }
 
     public boolean isUsernameDisplayed() {
-        return WebD.WEB_DRIVER.findElement(usernameLocator).isDisplayed();
+        return WebD.getWebDriver().findElement(usernameLocator).isDisplayed();
     }
 
     public boolean isPasswordDisplayed() {
-        return WebD.WEB_DRIVER.findElement(passwordLocator).isDisplayed();
+        return WebD.getWebDriver().findElement(passwordLocator).isDisplayed();
     }
 
     public boolean isLoginButtonDisplayed() {
-        return WebD.WEB_DRIVER.findElement(loginButtonLocator).isDisplayed();
+        return WebD.getWebDriver().findElement(loginButtonLocator).isDisplayed();
     }
 
 }

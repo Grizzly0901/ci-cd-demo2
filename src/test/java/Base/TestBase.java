@@ -1,7 +1,7 @@
 package Base;
 
 import Util.WebD;
-import org.openqa.selenium.WebDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,18 +12,19 @@ import java.time.Duration;
 
 public class TestBase {
 
-
     @BeforeMethod
     public void setUp() {
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--incognito", "--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
-        WebD.WEB_DRIVER = new ChromeDriver(options);
-        WebD.WEB_DRIVER.get("https://www.saucedemo.com/");
-        WebD.WEB_DRIVER_WAIT = new WebDriverWait(WebD.WEB_DRIVER, Duration.ofSeconds(10));
+        options.addArguments("--incognito");
+        WebD.setDrivers(new ChromeDriver(options));
+        WebD.getWebDriver().manage().window().maximize();
+        WebD.getWebDriver().get("https://www.saucedemo.com/");
+        WebDriverWait wait = new WebDriverWait(WebD.getWebDriver(), Duration.ofSeconds(10));
     }
 
     @AfterMethod
     public void cleanUp() {
-        WebD.WEB_DRIVER.close();
+        WebD.getWebDriver().close();
     }
 }
