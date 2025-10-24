@@ -26,24 +26,24 @@ public class CheckoutPageTest extends TestBase {
         homePage.clickCartButton();
         checkoutPage.clickCheckout();
 
-        // checkoutPage.fillCheckoutForm("Marry", "", "55000");
-        // checkoutPage.clickContinue();
-        // Assert.assertEquals(checkoutPage.getErrorText(), "Error: Last Name is required");
-        // checkoutPage.clearForm();
-
-        // Thread.sleep(5000);
-        // checkoutPage.fillCheckoutForm("", "Jane", "55000");
-        // Thread.sleep(5000);
-        // checkoutPage.clickContinue();
-        // Assert.assertEquals(checkoutPage.getErrorText(), "Error: First Name is required");
-        // checkoutPage.clearForm();
-
-        // Thread.sleep(5000);
-        // checkoutPage.fillCheckoutForm("Marry", "Jane", "");
-        // Thread.sleep(5000);
-        // checkoutPage.clickContinue();
-        // Assert.assertEquals(checkoutPage.getErrorText(), "Error: First name is required");
-        // checkoutPage.clearForm();
+//        checkoutPage.fillCheckoutForm("Marry", "", "55000");
+//        checkoutPage.clickContinue();
+//        Assert.assertEquals(checkoutPage.getErrorText(), "Error: Last Name is required");
+//        checkoutPage.clearForm();
+//
+//        Thread.sleep(5000);
+//        checkoutPage.fillCheckoutForm("", "Jane", "55000");
+//        Thread.sleep(5000);
+//        checkoutPage.clickContinue();
+//        Assert.assertEquals(checkoutPage.getErrorText(), "Error: First Name is required");
+//        checkoutPage.clearForm();
+//
+//        Thread.sleep(5000);
+//        checkoutPage.fillCheckoutForm("Marry", "Jane", "");
+//        Thread.sleep(5000);
+//        checkoutPage.clickContinue();
+//        Assert.assertEquals(checkoutPage.getErrorText(), "Error: First name is required");
+//        checkoutPage.clearForm();
 
 
     }
