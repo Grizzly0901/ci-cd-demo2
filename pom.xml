@@ -19,8 +19,6 @@
     </properties>
 
 
-
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -39,12 +37,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.35.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.9.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -75,6 +67,44 @@
             <artifactId>allure-testng</artifactId>
         </dependency>
 
+        <!--        Tạo setter getter-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.40</version>
+            <scope>compile</scope>
+        </dependency>
+
+                <!-- Faker Library-->
+                <dependency>
+                    <groupId>net.datafaker</groupId>
+                    <artifactId>datafaker</artifactId>
+                    <version>2.4.1</version>
+                </dependency>
+
+
+<!--        &lt;!&ndash; Add Faker &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.javafaker</groupId>-->
+<!--            <artifactId>javafaker</artifactId>-->
+<!--            <version>1.0.2</version>-->
+<!--        </dependency>-->
+
+
+        <!--Log4j-->
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.25.2</version>
+        </dependency>
+        <!--Log4j-->
 
     </dependencies>
 
@@ -88,13 +118,11 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <systemPropertyVariables>
-                        <webdriver.chrome.driver>chromedriver</webdriver.chrome.driver>
-                    </systemPropertyVariables>
                 </configuration>
+                <dependencies>
+
+                </dependencies>
             </plugin>
-
-
         </plugins>
 
     </build>
